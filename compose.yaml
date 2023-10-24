@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  mautrix-discord:
+    container_name: mautrix-discord
+    deploy:
+      restart_policy:
+        condition: always
+        delay: 5s
+    image: dock.mau.dev/mautrix/discord:latest
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
+      traefik.enable: "false"
+    volumes:
+      - "./mautrix/discord/data:/data:z"
+
+networks:
+  external:
+    external: true
+    name: $NETWORK
