@@ -12,9 +12,9 @@ services:
       com.centurylinklabs.watchtower.enable: "true"
       traefik.enable: "false"
     volumes:
-      - "./mautrix/discord/data:/data:z"
+      - "./src/mautrix/discord/data:/data:z"
 
 networks:
-  external:
+  default:
     external: true
     name: $NETWORK

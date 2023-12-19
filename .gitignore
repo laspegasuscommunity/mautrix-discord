@@ -1,2 +1,2 @@
 .env
-mautrix/discord/data/
+src/mautrix/discord/data/
